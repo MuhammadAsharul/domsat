@@ -21,11 +21,11 @@
         "@fontsource/open-sans": "^4.5.14",
         "@fontsource/poppins": "^4.5.10",
         "@inertiajs/react": "^1.0.6",
-        "framer-motion": "^10.12.12",
+        "framer-motion": "^10.12.16",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-fast-marquee": "^1.5.2",
         "react-icons": "^4.8.0",
-        "swiper": "^9.3.2"
+        "swiper": "^9.4.1"
     }
 }
