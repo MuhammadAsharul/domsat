@@ -1,0 +1,47 @@
+.swiper {
+    width: 48%;
+    background-color: 'transparent';
+  }
+  
+  .swiper_container {
+    height: 27rem;
+    padding: 2rem 0;
+    position: relative;
+  }
+  
+  .swiper-slide {
+    width: 18rem;
+    height: 20rem;
+    position: relative;
+    background-color: 'transparent';
+  }
+  
+
+  
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    display: none;
+  }
+  
+  .slider-controler {
+    position: relative;
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 450px) {
+    .swiper {
+      width: 90%;
+    }
+    .swiper-slide {
+      width: 15rem;
+    }
+  }
+  
+  .swiper-pagination {
+    position: relative;
+    bottom: 1rem;
+  }
+  

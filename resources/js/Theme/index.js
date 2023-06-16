@@ -5,5 +5,7 @@ const theme = extendTheme({
         body: "Poppins, sans-serif",
         heading: "Poppins, sans-serif",
     },
+   
 });
 export default theme;
+

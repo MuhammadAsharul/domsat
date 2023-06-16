@@ -1,9 +1,12 @@
 import "./bootstrap";
+import '../css/app.css';
 import React from "react";
 import { createInertiaApp } from "@inertiajs/react";
 import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import theme from "./Theme";
+import { useColorModeValue } from "@chakra-ui/react";
+
 
 createInertiaApp({
     resolve: (name) => {
