@@ -33,15 +33,16 @@ export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box w='full' px={10} pt={4}>
+    <Box w='full' px={10} pt={4}> 
       <Flex
         color={useColorModeValue('gray.600', 'wihte')}
         minH={'65px'}
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderStyle={'solid'}
+        align={'center'}
         borderColor={useColorModeValue('gray.200', 'whiteAlpha.400')}
-        align={'center'}>
+        >
         <Flex
           flex={{ base: 1, md: 'auto' }}
           ml={{ base: -2 }}
@@ -56,7 +57,6 @@ export default function Navbar() {
           />
         </Flex>
         <Flex w={'full'} justifyContent={{ base: 'center', md: 'space-between' }} alignItems={'center'} color={useColorModeValue('black', 'white')}>
-          {/* <Image src={Logo} alt="Image logo" height={5} /> */}
           <p style={{ fontWeight: '900', fontSize:'28px', margin: 0, padding:0 }}>
             Domsat.<span style={{ fontWeight: 'normal', margin: 0 }}>io</span>
           </p>
@@ -230,7 +230,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: 'Home',
+    label: 'Work',
     href: '#',
   },
   {
@@ -242,7 +242,7 @@ const NAV_ITEMS = [
     href: '#',
   },
   {
-    label: 'Work',
+    label: 'Contact',
     href: '#',
   },
   // {
@@ -260,9 +260,4 @@ const NAV_ITEMS = [
   //     },
   //   ],
   // },
-
-  {
-    label: 'Contact',
-    href: '#',
-  },
 ];
