@@ -6,24 +6,33 @@ import { useColorModeValue } from "@chakra-ui/color-mode";
 
 import React from "react";
 import Header from "../Components/Header";
-import About  from "../Components/About";
+import Work  from "../Components/Work";
+import Serving from "../Components/Serving";
+import About from "../Components/About";
+import Footer from "../Components/Footer";
 import OurTeam from "../Components/OurTeam";
 
 export default function Home(props) {
 
     return (
         <Flex 
-            flexDir={'column'} 
-            bg={useColorModeValue('white', '#000')}
-            overflowY={'scroll'} 
+            flexDir={'column'}
+            // justify={'center'} 
+            // alignItems={'center'}
+            bg={useColorModeValue('white', 'black')}
+            overflowY={'scroll'}
+            // overflowX={'hidden'} 
             scrollSnapType="y mandatory"
             scrollBehavior={'smooth'}
             height={'100vh'}
             transition="all 2s"
         >
             <Header />
-            <About />
+            <Work />
+            <Serving />
+            <About/>
             <OurTeam />
+            <Footer/>
         </Flex>
     );
 }

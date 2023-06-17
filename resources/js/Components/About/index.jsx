@@ -1,133 +1,125 @@
 import React from 'react'
-import { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { Box, Flex, Text, useColorModeValue } from '@chakra-ui/react';
-import Marquee from "react-fast-marquee";
+import { Flex, HStack, Box, Text, Image, Button, useColorModeValue } from '@chakra-ui/react'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from 'swiper';
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+import "./style.css";
 
 export default function About() {
-    const refAbout = useRef(null);
-    const inViewAbout = useInView(refAbout);
-    const mainControlsAbout = useAnimation()
-
-    useEffect(() => {
-        if (inViewAbout) {
-            mainControlsAbout.start('visible')
-        }
-        if (!inViewAbout) {
-            mainControlsAbout.start('hidden')
-        }
-    }, [inViewAbout])
-
-
     return (
         <Flex
-            id='about'
+            pt={5}
             flexDir={'column'}
             align={'center'}
-            justifyContent={'center'}
             minH={'100vh'}
-            position={'relative'}
             overflowX={'hidden'}
             scrollSnapAlign={'start'}
             scrollBehavior={'smooth'}
-            >
-            <motion.div
-                variants={{
-                    hidden: { opacity: 0, x: 200 },
-                    visible: { opacity: 1, x: 0 },
-                }}
-                initial='hidden'
-                animate={mainControlsAbout}
-                transition={{ duration: 1 }}
+        >
+            <HStack
+                w={'90%'}
+                px={{ base:5, lg:20}}
+                alignItems={'start'}
+                mb={16}
             >
                 <Text
-                    ref={refAbout}
-                    fontSize={{ base: "4xl", sm: "5xl", md: "6xl", lg: "7xl" }}
-                    fontWeight={'extrabold'}
+                    w={'40%'}
+                    mt={'-3'}
+                    fontSize={'55px'}
+                    fontWeight={'bolder'}
+                    textTransform={'uppercase'}
                 >
-                    About Us
+                    About
                 </Text>
-            </motion.div>
-            <motion.div
-                variants={{
-                    hidden: { opacity: 0, x: -900 },
-                    visible: { opacity: 1, x: 0 },
-                }}
-                initial='hidden'
-                animate={mainControlsAbout}
-                transition={{ duration: 0.6, delay: 0.5 }}
-            >
-                <Flex flexDir={'column'} align={'center'} >
+                <Flex flexDir={'column'} justifyContent={'start'}>
                     <Text
-                        textAlign={'center'}
-                        w={{ sm: '90%', md: '50%' }}
-                        p={{ base: 5, md: 0 }}
-                        fontSize={{ base: "md", sm: "lg", md: "xl", lg: "3xl" }}
+                        color={'gray.400'}
                     >
-                        We are building a technology-based ecosystem that enables inclusive access to quality
-                        learning content for teachers, supports data-driven decision-making in schools, and strengthens
-                        collaboration between Universities, Industry Partners, & Graduates.
+                        We image and design of the experiences innovate and creative. Just for you Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, necessitatibus!
                     </Text>
+                    <Button w={'150px'} mt={10} borderRadius="50px" bg={'transparent'} borderWidth="1.5px" borderColor={useColorModeValue('black', 'white')}>
+                        ABOUT US ↘
+                    </Button>
                 </Flex>
-            </motion.div>
+            </HStack>
+            <Flex w={'full'} justifyContent={'end'}>
+                <Box w={'90%'}>
+                    <Swiper
+                        loop={true}
+                        slidesPerView={"auto"}
+                        spaceBetween={30}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        pagination={{
+                            clickable: true,
+                          }}
+                        modules={[Autoplay, Pagination]}
+                        className="mySwiper"
+                        style={{
+                            width: '100%',
+                        }}
+                    >
+                    <SwiperSlide style={{ width: '80%' }}>
+                                <Flex position={'relative'} cursor={'pointer'} w={'full'}>
+                                    <Image 
+                                        src="https://cdn.discordapp.com/attachments/1108174725689131048/1119107912367865876/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg"
+                                        borderRadius={'15px'}/>
+                                    <Text 
+                                        position={'absolute'}
+                                        top="25%"
+                                        color={'white'}
+                                        textAlign={'center'}
+                                        fontWeight={'medium'} 
+                                        textTransform={'uppercase'}
+                                        w={'full'}
+                                        fontSize={'5xl'}
+                                    > Web <b>Development</b></Text>
+                                </Flex>
+                            </SwiperSlide>
+                            <SwiperSlide style={{ width: '80%' }} >
+                                <Flex position={'relative'} cursor={'pointer'}>
+                                    <Image 
+                                        src="https://images.unsplash.com/photo-1609921307735-98bf1617ecfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
+                                    <Text 
+                                        position={'absolute'}
+                                        top="25%"
+                                        color={'white'}
+                                        textAlign={'center'}
+                                        fontWeight={'medium'} 
+                                        textTransform={'uppercase'}
+                                        w={'full'}
+                                        fontSize={'5xl'}
+                                    > Mobile <b>Development</b> </Text>
+                                </Flex>
+                            </SwiperSlide>
+                            <SwiperSlide style={{ width: '80%' }} >
+                                <Flex position={'relative'} cursor={'pointer'}>
+                                    <Image 
+                                        src="https://cdn.discordapp.com/attachments/1108174725689131048/1119113735714390036/alvaro-reyes-zvmZiw3vdsQ-unsplash.jpg"
+                                        objectFit={"cover"}
+                                        objectPosition={"50% 0"}
+                                    />
+                                    <Text 
+                                        position={'absolute'}
+                                        top="25%"
+                                        color={'white'}
+                                        textAlign={'center'}
+                                        fontWeight={'medium'} 
+                                        textTransform={'uppercase'}
+                                        w={'full'}
+                                        fontSize={'5xl'}
+                                    > UI UX <b>Designer</b> </Text>
+                                </Flex>
+                            </SwiperSlide>
+                    </Swiper>
+                </Box>
+            </Flex>
         </Flex>
     )
 }
-
-{/* <Flex
-                w={'104%'}
-                scrollSnapAlign={'start'}
-                position={'absolute'}   
-                transform="rotate(5deg) translateY(100px)"
-                bg="#ff6700" 
-                top={0}
-                border={'1px'}
-                mx={9}
-                py={5}
-                color={'black'}
-            >
-                <Marquee gradient={false} speed={70}>
-                        {[...new Array(10)]
-                            .map(
-                                () => (
-                                    <Text
-                                        textTransform={'uppercase'}
-                                        whiteSpace={'nowrap'}
-                                        display={'inline'}
-                                        fontSize={'2xl'}
-                                        fontWeight={'bold'}
-                                        px={'3rem'}
-                                    >
-                                        Domsattt
-                                    </Text>
-                                ))}
-                </Marquee>
-            </Flex>
-            <Flex
-                w={'104%'}
-                position={'absolute'}   
-                transform="rotate(-7deg) translateY(100px)"
-                bg="#ff6700" 
-                top={0}
-                border={'1px'}
-                color={'black'}
-                mx={9}
-                py={5}
-            >
-                <Marquee gradient={false} speed={60}>
-                        {[...new Array(10)]
-                            .map(
-                                () => (
-                                    <Text
-                                        textTransform={'uppercase'}
-                                        whiteSpace={'nowrap'}
-                                        display={'inline'}
-                                        fontSize={'2xl'}
-                                        fontWeight={'bold'}
-                                        px={'3rem'}
-                                    >
-                                        Domsattt
-                                    </Text>
-                                ))}
-                </Marquee>
-            </Flex> */}

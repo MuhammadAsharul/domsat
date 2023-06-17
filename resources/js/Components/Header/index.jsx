@@ -36,6 +36,7 @@ const Header = () => {
     //         mainControls.start('hidden')
     //     }
     // }, [inViewHeader])
+
     return (
         <Flex
             width={"full"}
@@ -67,7 +68,7 @@ const Header = () => {
                     <Text
                         color={'gray.400'}
                         position={'absolute'}
-                        bottom={'15px'}
+                        bottom={'13px'}
                         left={'15px'}
                         textTransform={'uppercase'}
                         fontWeight={'medium'}
@@ -79,7 +80,7 @@ const Header = () => {
                     <Text
                         color={'gray.400'}
                         position={'absolute'}
-                        bottom={'15px'}
+                        bottom={'13px'}
                         right={'15px'}
                         textTransform={'uppercase'}
                         fontWeight={'medium'}
